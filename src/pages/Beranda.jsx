@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-
+import Typed from 'react-typed'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -17,8 +17,22 @@ const Beranda = () => {
         <div className='w-full h-screen relative bg-slate-300'>
             <img className='w-full h-full object-cover' src={imageUrl1} />
                 <div className='absolute top-0 w-full h-full flex flex-col justify-center text-left text-white p-4'>
-                    <h1 className='uppercase text-5xl font-bold lg:ml-40'>EXPORTATES.</h1>
-                    <p className='py-4 text-2xl text-white lg:ml-40'>AN INDONESIAN-BASED EXPORTING COMPANY</p>
+                    <h1 
+                        className='uppercase text-5xl font-bold lg:ml-40' 
+                        data-aos="fade-up"
+                        data-aos-duration="3000">
+                        EXPORTATES.
+                    </h1>
+                    <p className='py-4 text-2xl text-white lg:ml-40'>
+                        <Typed
+                            strings={[
+                                "AN INDONESIAN-BASED EXPORTING COMPANY"
+                            ]}
+                            typeSpeed={150}
+                            backSpeed={100}
+                            loop
+                            />
+                    </p>
                     <div className='w-9/12 lg:ml-40 lg:mt-40'>
                         <form>   
                             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -36,7 +50,11 @@ const Beranda = () => {
         <section className="-mt-36 bg-gray-50 px-4 pb-20 pt-24">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10">
+                <div 
+                    className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10"
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                >
                     <div className="p-6 px-8 text-center">
                     <button className="middle none pointer-events-none relative mb-6 h-12 max-h-[48px] w-12 max-w-[48px] rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 text-center font-sans text-sm font-medium uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
@@ -47,7 +65,11 @@ const Beranda = () => {
                     <p className="text-blue-gray-600 block font-sans text-base font-normal leading-relaxed antialiased">We work closely with our clients to make sure they get the greatest product at a fair price. We have developed a means for customers to participate in our business and our exporting policies are based on their comments.</p>
                     </div>
                 </div>
-                <div className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10">
+                <div 
+                    className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10"
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                >
                     <div className="p-6 px-8 text-center">
                     <button className="middle none pointer-events-none relative mb-6 h-12 max-h-[48px] w-12 max-w-[48px] rounded-full bg-gradient-to-tr from-red-600 to-red-400 text-center font-sans text-sm font-medium uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
@@ -58,7 +80,11 @@ const Beranda = () => {
                     <p className="text-blue-gray-600 block font-sans text-base font-normal leading-relaxed antialiased">We don’t just export goods, but goods of the best quality spices from Indonesia to the best fuel from around the world. We like to make your export experience a truly wonderful trip.</p>
                     </div>
                 </div>
-                <div className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10">
+                <div 
+                    className="relative flex flex-col rounded-2xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10"
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                >
                     <div className="p-6 px-8 text-center">
                     <button className="middle none pointer-events-none relative mb-6 h-12 max-h-[48px] w-12 max-w-[48px] rounded-full bg-gradient-to-tr from-teal-600 to-teal-400 text-center font-sans text-sm font-medium uppercase text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                         <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
@@ -73,7 +99,12 @@ const Beranda = () => {
                 </div>
                 </div>
                 <div className="mt-32 flex flex-wrap items-center">
-                <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
+                <div 
+                    className="mx-auto -mt-8 w-full px-4 md:w-5/12"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                >
                     <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="text-blue-gray-900 h-6 w-6"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"></path></svg>
                     </div>
@@ -81,7 +112,12 @@ const Beranda = () => {
                     <p className="text-blue-gray-500 mb-8 block font-sans text-base font-normal leading-relaxed antialiased">We have made quality our habit. It’s not something that we just strive for we live by this principle every day. See more of our products! From coffee beans to gas, we have it all!</p>
                     <button className="middle none center rounded-lg border border-blue-500 px-6 py-3 font-sans text-xs font-bold uppercase text-blue-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">read more</button>
                 </div>
-                <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
+                <div 
+                    className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0"
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                >
                     <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-500/10">
                         <img alt="Card Image" src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?auto=format&fit=crop&w=1212&h=992" className="h-full w-full rounded-lg" />
                     </div>
