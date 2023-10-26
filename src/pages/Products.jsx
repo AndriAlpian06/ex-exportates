@@ -52,49 +52,49 @@ const Beranda = () => {
                 <div className="mt-16">
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'AllProduts' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'AllProduts' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('AllProducts')}
                     >
                         All
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Coconut Goods' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Coconut Goods' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Coconut Goods')}
                     >
                         Coconut Goods
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Spices' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Spices' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Spices')}
                     >
                         Spices
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Coffee Beans' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Coffee Beans' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Coffee Beans')}
                     >
                         Coffee Beans
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Palm Goods' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Palm Goods' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Palm Goods')}
                     >
                         Palm Goods
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Sunflower Goods' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Sunflower Goods' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Sunflower Goods')}
                     >
                         Sunflower Goods
                     </button>
                     <button
                         type="button"
-                        className={`text-rose-500 hover:text-white border-rose-500 bg-white hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-rose-500 dark:text-rose-500 dark:hover:text-rose-500 dark:hover:bg-white dark:bg-white dark:focus:ring-rose-500 ${selectedCategoryProducts === 'Other Goods' ? 'bg-rose-500 text-rose-500' : ''}`}
+                        className={`text-green-500 hover:text-white border-green-500 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-500 rounded-full text-sm font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:border-green-500 dark:text-green-500 dark:hover:text-green-500 dark:hover:bg-white dark:bg-white dark:focus:ring-green-500 ${selectedCategoryProducts === 'Other Goods' ? 'bg-green-500 text-green-500' : ''}`}
                         onClick={() => setSelectedCategoryProducts('Other Goods')}
                     >
                         Other Goods
@@ -107,9 +107,9 @@ const Beranda = () => {
                                         backgroundImage: `url(${item.img})`,
                                         backgroundSize: 'cover',
                                     }}>
-                                    {/* <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                    <button className="p-2 rounded-full bg-green-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                         <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                    </button> */}
+                                    </button>
                                 </div>
                                 <div className="px-5 py-3">
                                     <h3 className="text-gray-700 uppercase">{item.name}</h3>
@@ -117,119 +117,8 @@ const Beranda = () => {
                                 </div>
                             </div>
                         ))}
-                        
-                        {/* <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                                style={{
-                                    backgroundImage: `url(${imageUrl5})`,
-                                    backgroundSize: 'cover',
-                                }}>
-                                <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                    <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                </button>
-                            </div>
-                            <div className="px-5 py-3">
-                                <h3 className="text-gray-700 uppercase">Man Mix</h3>
-                                <span className="text-gray-500 mt-2">$12</span>
-                            </div>
-                        </div>
-                        <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                                style={{
-                                    backgroundImage: `url(${imageUrl6})`,
-                                    backgroundSize: 'cover',
-                                }}>
-                                <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                    <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                </button>
-                            </div>
-                            <div className="px-5 py-3">
-                                <h3 className="text-gray-700 uppercase">classNameic watch</h3>
-                                <span className="text-gray-500 mt-2">$12</span>
-                            </div>
-                        </div>
-                        <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                                style={{
-                                    backgroundImage: `url(${imageUrl7})`,
-                                    backgroundSize: 'cover',
-                                }}>
-                                <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                    <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                </button>
-                            </div>
-                            <div className="px-5 py-3">
-                                <h3 className="text-gray-700 uppercase">woman mix</h3>
-                                <span className="text-gray-500 mt-2">$12</span>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
-            {/* <div className="mt-16">
-                <h3 className="text-gray-600 text-2xl font-medium">Fashions</h3>
-                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                    <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                            style={{
-                                backgroundImage: `url(${imageUrl8})`,
-                                backgroundSize: 'cover',
-                            }}>
-                            <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div className="px-5 py-3">
-                            <h3 className="text-gray-700 uppercase">Chanel</h3>
-                            <span className="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                            style={{
-                                backgroundImage: `url(${imageUrl9})`,
-                                backgroundSize: 'cover',
-                            }}>
-                            <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div className="px-5 py-3">
-                            <h3 className="text-gray-700 uppercase">Man Mix</h3>
-                            <span className="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                            style={{
-                                backgroundImage: `url(${imageUrl10})`,
-                                backgroundSize: 'cover',
-                            }}>
-                            <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div className="px-5 py-3">
-                            <h3 className="text-gray-700 uppercase">classNameic watch</h3>
-                            <span className="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div className="flex items-end justify-end h-56 w-full bg-cover" 
-                            style={{
-                                backgroundImage: `url(${imageUrl11})`,
-                                backgroundSize: 'cover',
-                            }}>
-                            <button className="p-2 rounded-full bg-rose-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div className="px-5 py-3">
-                            <h3 className="text-gray-700 uppercase">woman mix</h3>
-                            <span className="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             </div>
         </main>
     </>
