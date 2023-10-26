@@ -22,7 +22,7 @@ export default function MobileNavbar() {
   return (
     <Menu as={'div'} className='flex lg:hidden items-center justify-between py-2 px-4'>
         <div className='flex px-4 items-center'>
-            <a href="#" className="text-white font-medium mr-6"><h1 className='uppercase font-bold text-xl text-green-500'>exportates</h1></a>
+            <a href="#" className="text-white font-medium mr-6"><h1 className='uppercase font-bold text-xl text-green-500'>exportates.</h1></a>
         </div>
 
         <Menu.Button className='focus:outline-none'>
@@ -43,9 +43,9 @@ export default function MobileNavbar() {
           <Menu.Items as={'div'} className='shadow-sm border bg-white absolute right-0 mr-12 top-0 mt-8 py-1 rounded-lg w-56 overflow-hidden'>
 
             <Link to="/" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Home</Link>
-            <Link to="/about" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Our Work</Link>
-            <Link to="/contact" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Products</Link>
-            <Link to="/videotron" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Contact Us</Link>
+            <Link to="/our_work" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Our Work</Link>
+            <Link to="/products" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Products</Link>
+            <Link to="/contact_us" className="px-4 py-2 text-sm hover:bg-gray-100 text-green-500 hover:text-black block">Contact Us</Link>
           </Menu.Items>
         </Transition>
     </Menu>

@@ -37,7 +37,7 @@ const Our_Work = () => {
                 <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                     <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
                 </div>
-                <div class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                <div class="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                     <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">Our staff picking up products that are ready to be delivered to our customer.</p>
                 </div>
                 </div>
@@ -55,7 +55,7 @@ const Our_Work = () => {
                     <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                         <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
                     </div>
-                    <div class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                    <div class="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                         <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">Visiting our virgin coconut oil factory to make sure products quality is right before products are shiped to our customer.</p>
                     </div>
                 </div>

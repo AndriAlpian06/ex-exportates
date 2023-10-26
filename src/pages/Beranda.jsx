@@ -14,11 +14,11 @@ const Beranda = () => {
 
   return (
     <>
-        <div className='w-full h-screen relative bg-slate-300'>
-            <img className='w-full h-full object-cover' src={imageUrl1} />
+        <div className='w-full h-screen relative bg-black'>
+            <img className='w-full h-full object-cover opacity-75' src={imageUrl1} />
                 <div className='absolute top-0 w-full h-full flex flex-col justify-center text-left text-white p-4'>
                     <h1 
-                        className='uppercase text-5xl font-bold lg:ml-40' 
+                        className='uppercase text-5xl font-bold lg:ml-40 lg:mb-16 md:mb-16' 
                         data-aos="fade-up"
                         data-aos-duration="3000">
                         EXPORTATES.
@@ -33,7 +33,7 @@ const Beranda = () => {
                             loop
                             />
                     </p>
-                    <div className='w-9/12 lg:ml-40 lg:mt-40'>
+                    <div className='w-9/12 lg:ml-40 lg:mt-20'>
                         <form>   
                             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div className="relative">
