@@ -33,12 +33,12 @@ const Navbar = () => {
                     <div className="flex items-center gap-x-4 uppercase font-bold">    
                         <Link to='/' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Home</Link>
                         <Link to='/our_work' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Our Work</Link>
-                        <Link to='/products' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Products</Link>
+                        <Link to='/shop' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Products</Link>
                         <Link to='/contact_us' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Contact Us</Link>                        
                     </div>
                     <div className="flex items-center gap-x-4 uppercase font-bold">    
                         <Link to='/' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Login</Link>
-                        <Link to='/our_work' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>
+                        <Link to='/cart' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>
                             <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>    
                         </Link>                        
                     </div>

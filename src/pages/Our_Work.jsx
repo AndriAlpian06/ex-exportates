@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect} from 'react'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -10,12 +10,12 @@ const Our_Work = () => {
         AOS.refresh();
       }, []);
 
-    const imageUrl1 = 'https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?auto=format&fit=crop&w=2880';
+    const imageUrl1 = 'https://i.ibb.co/dgbMK1x/Whats-App-Image-2023-09-19-at-19-28-24.jpg';
 
   return (
     <>
         <div className='w-full h-96 relative bg-black'>
-            <img className='w-full h-full object-cover opacity-75' src={imageUrl1} />
+            <img className='w-full h-full object-cover opacity-75' src={imageUrl1} alt='' />
                 <div className='absolute top-0 w-full h-full flex flex-col justify-center text-left text-white p-4'>
                     <h1 className='uppercase text-5xl font-bold lg:ml-40'>OUR WORK</h1>      
                 </div>

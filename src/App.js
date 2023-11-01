@@ -9,24 +9,31 @@ import Footer from './components/Footer';
 import Our_Work from './pages/Our_Work';
 import Contact_Us from './pages/Contact_Us';
 import Products from './pages/Products';
+import {Cart} from './pages/cart/cart'
+import { ShopContextProvider } from './context/shop-context';
+import {Shop} from './pages/shop/shop'
 
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Topbar />
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Beranda />} />
-          <Route path='/our_work' element={<Our_Work />} />
-          <Route path='/contact_us' element={<Contact_Us />} />
-          <Route path='/products' element={<Products />} />
-        </Routes>
-        {/* <ButtonUp />*/}
-        <Footer />
-      </div> 
-    </Router>
+    <ShopContextProvider>
+      <Router>
+        <div>
+          <Topbar />
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Beranda />} />
+            <Route path='/our_work' element={<Our_Work />} />
+            <Route path='/contact_us' element={<Contact_Us />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/shop' element={<Shop />} />
+          </Routes>
+          {/* <ButtonUp />*/}
+          <Footer />
+        </div> 
+      </Router>
+    </ShopContextProvider>
   );
 }
 

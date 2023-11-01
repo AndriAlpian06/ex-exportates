@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-        <footer className="bg-blueGray-200 relative pb-6 pt-8">
+        <footer className="bg-gray-200 relative pb-6 pt-8">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap text-center lg:text-left">
                 <div className="w-full px-4 lg:w-6/12">
@@ -16,7 +16,8 @@ const Footer = () => {
                             style={{'border':0}} 
                             allowFullScreen="" 
                             aria-hidden="false" 
-                            tabIndex="0">
+                            tabIndex="0"
+                        >
                         </iframe>
                     </div>
                 </div>
