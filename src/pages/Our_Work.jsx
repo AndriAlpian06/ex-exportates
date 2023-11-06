@@ -10,7 +10,7 @@ const Our_Work = () => {
         AOS.refresh();
       }, []);
 
-    const imageUrl1 = 'https://i.ibb.co/dgbMK1x/Whats-App-Image-2023-09-19-at-19-28-24.jpg';
+    const imageUrl1 = 'https://images.unsplash.com/photo-1561986810-4f3ba2f46ceb?auto=format&fit=crop&w=2880';
 
   return (
     <>
