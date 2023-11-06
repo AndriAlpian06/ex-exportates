@@ -12,8 +12,12 @@ function formatRupiah(angka) {
 export const Product = (props) => {
   const { id, name, img, price } = props.data;
   const { addToCart, cartItems } = useContext(ShopContext);
+  
 
   const cartItemCount = cartItems[id];
+
+  // State untuk melacak status login pengguna
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <>
@@ -25,6 +29,13 @@ export const Product = (props) => {
             }}>
             <button 
                 className="p-2 rounded-full bg-green-500 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+                // onClick={() => {
+                //   if (isUserLoggedIn) {
+                //       // Lakukan logika penambahan ke keranjang
+                //   } else {
+                //       alert("Anda harus login terlebih dahulu untuk menambahkan ke keranjang.");
+                //   }
+                // }}
                 onClick={() => addToCart(id)} 
                 >
                 <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
