@@ -1,15 +1,13 @@
 // import { Menu, Transition } from '@headlessui/react'
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
 import MobileNavbar from './MobileNavbar'
-
-import { Link, useLocation } from 'react-router-dom'
-
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from './AuthToken'
+import axios from 'axios'
 
 const Navbar = () => {
     
     const location = useLocation();
-
     // Fungsi untuk memeriksa apakah rute saat ini adalah /login atau /signup
     const isLoginOrRegisterPage = location.pathname === '/login' || location.pathname === '/signup';
 
@@ -24,6 +22,39 @@ const Navbar = () => {
 
     window.addEventListener('scroll', changeColor)
 
+    // const {token, userId, logout} = useAuth()
+    // const {userData, setUserData} = useState(null)
+    // const {error, setError} = useState(null)
+    // const navigate = useNavigate()
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //       try {
+
+    //         const headers = {
+    //           Authorization: `Bearer ${token}`,
+    //         };
+    
+    //         const response = await axios.get(`https://api-exportates.vercel.app/users/${userId}`, headers);
+            
+    //         //console.log("name", userData.data[0].name);
+    //         setUserData(response.data);
+    //       } catch (error) {
+    //         setError(error);
+    //         Logout()
+    //       }
+    //     };
+    
+    //     fetchData();
+    // }, 
+    // []);
+
+    // const Logout = () => {
+    //     //console.log('Logout clicked');
+    //     logout();
+    //     navigate('/')
+    //     // Lakukan tindakan lain yang diperlukan setelah logout.
+    // };
 
   return (
     <div 
@@ -46,7 +77,17 @@ const Navbar = () => {
                         <Link to='/contact_us' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Contact Us</Link>                        
                     </div>
                     <div className="flex items-center gap-x-4 uppercase font-bold">    
-                        <Link to='/login' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>Login</Link>
+                        <Link to='/login' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>
+                        {/* {userData && userData.data[0].name &&  (
+                            <p>{userData.data[0].name}</p>
+                        )} */}
+                        {/* {userData !== null ? (
+                            <p className='font-bold'>{userData.data[0].name}</p>
+                        ) : (
+                            <p className='font-bold'>Login</p>
+                        )} */}
+                        Login
+                        </Link>
                         <Link to='/cart' className={color ? 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-[#e64a19] p-4' : 'md:text-sm lg:text-tiny px-4 py-2 text-green-500 hover:border-b-2 hover:border-green-500 p-4'}>
                             <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>    
                         </Link>                        

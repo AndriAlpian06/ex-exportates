@@ -1,7 +1,7 @@
 import './App.css';
 import Beranda from './pages/Beranda';
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Topbar from './components/TopBar';
 import Footer from './components/Footer';
@@ -14,7 +14,6 @@ import SignUp from './pages/SignUp'
 import {Cart} from './pages/cart/cart'
 import { ShopContextProvider } from './context/shop-context';
 import {Shop} from './pages/shop/shop'
-
 
 function App() {
 

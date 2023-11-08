@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../../context/shop-context";
+import { useNavigate } from 'react-router-dom';
 
 
 function formatRupiah(angka) {
@@ -12,7 +13,7 @@ function formatRupiah(angka) {
 export const Product = (props) => {
   const { id, name, img, price } = props.data;
   const { addToCart, cartItems } = useContext(ShopContext);
-  
+  const navigate = useNavigate();
 
   const cartItemCount = cartItems[id];
 
@@ -35,6 +36,7 @@ export const Product = (props) => {
                        addToCart(id)
                   } else {
                       alert("Anda harus login terlebih dahulu untuk menambahkan ke keranjang.");
+                      navigate('/login')
                   }
                 }}
                 //onClick={() => addToCart(id)} 

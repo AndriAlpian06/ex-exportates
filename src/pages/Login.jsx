@@ -1,11 +1,83 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, Fragment } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useAuth } from '../components/AuthToken'
+import { Dialog, Transition } from '@headlessui/react'
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [errModal, setErrModal] = useState(false)
+    const [message, setMessage] = useState('')
+    const navigate = useNavigate();
+    const auth = useAuth();
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        
+        try {
+            const response = await axios.post('https://api-exportates.vercel.app/login', {
+                email: email, 
+                password: password
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            //console.log('response login', data.token)
+
+            if(response.status === 200 ){
+                const data = response.data
+                if(data.token && data.data.id){
+                    
+                    auth.login(data.token, data.data.id)
+                    localStorage.setItem('token', data.token)
+                    localStorage.setItem('userId', data.data.id)
+                    navigate('/')
+                }
+                else {
+                    console.log('Invalid response data')
+                }
+            }
+            else {
+                setMessage('Password anda salah')
+                setErrModal(true)
+            }
+
+        }
+        catch (error){
+            setMessage('Username dan Password anda salah!!')
+            setErrModal(true)
+            console.log(error)
+        }
+    }
+
+    const handleKeyPress = (e) => {
+        if(e.key === 'Enter'){
+            e.preventDefault()
+            handleSubmit()
+        }
+    }
 
     const backgroundImageStyle = {
         backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')"
-      };
+    };
+
+    const loginWithGoogle = (e) => {
+        
+        e.preventDefault()
+        
+        window.location.href = "https://api-exportates.vercel.app/auth/google"
+    }
 
   return (
     <>
@@ -15,7 +87,7 @@ const Login = () => {
                 <div className="w-full p-8 lg:w-1/2">
                 <h2 className="text-center text-2xl font-semibold text-gray-700">EXPROTATES</h2>
                 <p className="text-center text-xl text-gray-600">Welcome back!</p>
-                <Link to="/" className="mt-4 flex items-center justify-center rounded-lg text-white shadow-md hover:bg-gray-100">
+                <Link to="/" className="mt-4 flex items-center justify-center rounded-lg text-white shadow-md hover:bg-gray-100" onClick={loginWithGoogle}>
                     <div className="px-4 py-3">
                     <svg className="h-6 w-6" viewBox="0 0 40 40">
                         <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
@@ -28,23 +100,75 @@ const Login = () => {
                 </Link>
                 <div className="mt-4 flex items-center justify-between">
                     <span className="w-1/5 border-b lg:w-1/4"></span>
-                    <a href="#" className="text-center text-xs uppercase text-gray-500">or login with email</a>
+                    <a href="https://ex-exportates.netlify.app/auth/google" className="text-center text-xs uppercase text-gray-500" alt=''>or login with email</a>
                     <span className="w-1/5 border-b lg:w-1/4"></span>
                 </div>
                 <div className="mt-4">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Email Address</label>
-                    <input className="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 px-4 py-2 text-gray-700 focus:outline-none" type="email" />
+                    <input className="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 px-4 py-2 text-gray-700 focus:outline-none" type="email" value={email} onChange={handleEmailChange} />
                 </div>
                 <div className="mt-4">
                     <div className="flex justify-between">
                     <label className="mb-2 block text-sm font-bold text-gray-700">Password</label>
-                    <a href="#" className="text-xs text-gray-500">Forget Password?</a>
+                    <Link to="/" className="text-xs text-gray-500">Forget Password?</Link>
                     </div>
-                    <input className="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 px-4 py-2 text-gray-700 focus:outline-none" type="password" />
+                    <input className="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 px-4 py-2 text-gray-700 focus:outline-none" type="password" value={password} onChange={handlePasswordChange} onKeyDown={handleKeyPress} />
                 </div>
                 <div className="mt-8">
-                    <button className="w-full rounded bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-600">Login</button>
+                    <button className="w-full rounded bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-600" onClick={handleSubmit}>Login</button>
                 </div>
+                {errModal && (
+                    <Transition appear show={true} as={Fragment}>
+                        <Dialog as="div" className="relative z-10" onClose={() => setErrModal(false)}>
+                        <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <div className="fixed inset-0 bg-black bg-opacity-25" />
+                        </Transition.Child>
+                            <div className="fixed inset-0 overflow-y-auto">
+                                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                                <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0 scale-95"
+                                    enterTo="opacity-100 scale-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100 scale-100"
+                                    leaveTo="opacity-0 scale-95"
+                                >
+                                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                        <Dialog.Title 
+                                        as="h3" 
+                                        className="text-lg font-medium leading-6 text-gray-900">
+                                            Alert
+                                        </Dialog.Title>
+                                        <div className="mt-2">
+                                            <p className="text-sm text-gray-500">
+                                            {message}
+                                            </p>
+                                        </div>
+                                        <div className="pt-2 space-x-4">
+                                            <button
+                                            type="button"
+                                            className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                                            onClick={() => setErrModal(null)}
+                                            >
+                                            Close
+                                            </button>
+                                        </div>
+                                    </Dialog.Panel>
+                                </Transition.Child>
+                                </div>
+                            </div>
+                        </Dialog>
+                    </Transition>
+                )}
                 <div className="mt-4 flex items-center justify-between">
                     <span className="w-1/5 border-b md:w-1/4"></span>
                     <Link to="/signup" className="text-md font-bold uppercase text-gray-500">or sign up</Link>
