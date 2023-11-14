@@ -14,30 +14,36 @@ import SignUp from './pages/SignUp'
 import {Cart} from './pages/cart/cart'
 import { ShopContextProvider } from './context/shop-context';
 import {Shop} from './pages/shop/shop'
+import { AuthProvider } from './components/AuthToken';
+import { UserProvider } from './components/UserContext';
 
 function App() {
 
   return (
-    <ShopContextProvider>
-      <Router>
-        <div>
-          <Topbar />
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<Beranda />} />
-            <Route path='/our_work' element={<Our_Work />} />
-            <Route path='/contact_us' element={<Contact_Us />} />
-            <Route path='/products' element={<Products />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/shop' element={<Shop />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-          </Routes>
-          {/* <ButtonUp />*/}
-          <Footer />
-        </div> 
-      </Router>
-    </ShopContextProvider>
+    <AuthProvider>
+      <UserProvider>
+        <ShopContextProvider>
+          <Router>
+            <div>
+              <Topbar />
+              <Navbar />
+              <Routes>
+                <Route path='/' element={<Beranda />} />
+                <Route path='/our_work' element={<Our_Work />} />
+                <Route path='/contact_us' element={<Contact_Us />} />
+                <Route path='/products' element={<Products />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/shop' element={<Shop />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<SignUp />} />
+              </Routes>
+              {/* <ButtonUp />*/}
+              <Footer />
+            </div> 
+          </Router>
+        </ShopContextProvider>
+      </UserProvider>
+    </AuthProvider>
   );
 }
 

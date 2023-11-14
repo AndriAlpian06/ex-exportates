@@ -32,8 +32,17 @@ const Login = () => {
                     'Content-Type': 'application/json'
                 }
             });
+            // const response = await axios.post('http://localhost:4000/login', {
+            //     email: email, 
+            //     password: password
+            // },
+            // {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // });
             
-            //console.log('response login', data.token)
+            //console.log('response login', response)
 
             if(response.status === 200 ){
                 const data = response.data

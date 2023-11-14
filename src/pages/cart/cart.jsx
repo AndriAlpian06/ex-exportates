@@ -4,6 +4,8 @@ import { dataProducts } from "../../Products";
 import { CartItem } from "./cart-item";
 import { json, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {useUser} from '../../components/UserContext'
+import {useAuth} from '../../components/AuthToken'
 
 import "./cart.css";
 
@@ -18,37 +20,59 @@ export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const [paymentToken, setPaymentToken] = useState(null)
   const totalAmount = getTotalCartAmount();
-
-
+  const {userData} = useUser()
+  const {token} = useAuth()
+  
   const navigate = useNavigate();
 
   const imageUrl1 = 'https://cdn.create.vista.com/api/media/small/296406986/stock-photo-top-view-shopping-cart-presents';
-
+  
   const checkoutPayment = async () => {
     
+    console.log(userData)
+
     try {
 
-      const paymentData = { // Total jumlah pembayaran
-        orderId: 'ORDER-123',
-        totalAmount: totalAmount,
-        transactions: [],
-      };
-
-      // Isi daftar item yang terpilih
+      const transactions = [];
       dataProducts.forEach((product) => {
         if (cartItems[product.id] !== 0) {
-          paymentData.transactions.push({
+          transactions.push({
             id: product.id,
             price: product.price,
             quantity: cartItems[product.id],
             name: product.name,
           });
         }
-      })
+      });
 
-      const response = await axios.post("http://localhost:4000/checkout2", paymentData, {
+      const paymentData = { // Total jumlah pembayaran
+        orderId: 'ORDER-123',
+        totalAmount: totalAmount,
+        transactions: transactions,
+        customer_details: {
+          "first_name": userData.data[0].firstname,
+          "last_name": userData.data[0].lastname,
+          "email": userData.data[0].email,
+          "phone": userData.data[0].phone,
+          "billing_address":{
+            "first_name": userData.data[0].firstname,
+            "last_name": userData.data[0].lastname,
+            "email": userData.data[0].email,
+            "phone": userData.data[0].phone,
+            "address": userData.data[0].address,
+            "city": userData.data[0].city,
+            "postal_code": userData.data[0].postal_code,
+            "country_code": userData.data[0].country_code,
+          }
+        }
+      };
+
+      //console.log(paymentData)
+
+      const response = await axios.post("https://api-exportates.vercel.app/checkout", paymentData, {
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         }
       })
       //console.log(response.data.token.token)
@@ -66,38 +90,6 @@ export const Cart = () => {
     }
   }
 
-  // Fungsi untuk menangani pembayaran
-  // const handlePayment = async () => {
-  //   try {
-  //     // Buat objek pembayaran
-  //     const paymentData = {
-  //       amount: totalAmount, // Total jumlah pembayaran
-  //       items: [], // Daftar item yang terpilih
-  //     };
-
-  //     // Isi daftar item yang terpilih
-  //     dataProducts.forEach((product) => {
-  //       if (cartItems[product.id] !== 0) {
-  //         paymentData.items.push({
-  //           id: product.id,
-  //           price: product.price,
-  //           quantity: cartItems[product.id],
-  //           name: product.name,
-  //         });
-  //       }
-  //     });
-
-  //     // Kirim permintaan pembayaran ke server backend
-  //     const response = await axios.post("http://localhost:4000/api/checkout", paymentData);
-
-  //     // Redirect ke halaman pembayaran Midtrans
-  //     window.location.href = response.data.redirect_url;
-  //   } catch (error) {
-  //     console.error("Error saat memproses pembayaran:", error);
-  //   }
-  // };
-
-  // console.log(cartItems)
   return (
     <>
       <div className='w-full h-96 relative bg-black'>
@@ -127,9 +119,6 @@ export const Cart = () => {
               onClick={() => 
                 checkoutPayment()
               }
-                // navigate("/checkout");
-              
-              //onClick={handlePayment}
             >
               {" "}
               Checkout{" "}

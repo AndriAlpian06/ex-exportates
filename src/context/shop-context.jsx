@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { dataProducts } from "../Products";
 
 export const ShopContext = createContext(null);
@@ -13,6 +13,7 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [totalClicks, setTotalClicks] = useState(0); 
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -27,6 +28,7 @@ export const ShopContextProvider = (props) => {
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    setTotalClicks((prevClicks) => prevClicks + 1);
   };
 
   const removeFromCart = (itemId) => {
@@ -48,6 +50,7 @@ export const ShopContextProvider = (props) => {
     removeFromCart,
     getTotalCartAmount,
     checkout,
+    totalClicks
   };
 
   return (
