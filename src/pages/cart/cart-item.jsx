@@ -16,9 +16,9 @@ export const CartItem = (props) => {
     // console.log(id, name, price)
 
   return (
-    <div className="cartItem" key={id}>
+    <div className="cartItem px-4" key={id}>
       <img src={img} alt="" />
-      <div className="description">
+      <div className="description px-4">
         <p>
           <b>{name}</b>
         </p>

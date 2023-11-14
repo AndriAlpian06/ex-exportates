@@ -111,8 +111,8 @@ export const Cart = () => {
         </div>
 
         {totalAmount > 0 ? (
-          <div className="checkout">
-            <p> Subtotal: {formatRupiah(totalAmount)} </p>
+          <div className="checkout py-16">
+            <p className="text-3xl font-bold py-8"> Subtotal: {formatRupiah(totalAmount)} </p>
             <button onClick={() => navigate("/shop")}> Continue Shopping </button>
             <button
               id="pay-button"
