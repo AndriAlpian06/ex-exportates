@@ -29,7 +29,7 @@ export const Cart = () => {
   
   const checkoutPayment = async () => {
     
-    console.log(userData)
+    //console.log(userData)
 
     try {
 
