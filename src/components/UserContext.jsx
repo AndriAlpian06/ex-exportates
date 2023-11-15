@@ -8,25 +8,19 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const {token: authToken, userId:authUserId} = useAuth()
   const [userData, setUserData] = useState(null);
-  const [tokenFromUrl, userIdFromUrl] = useParams()
+  const {tokenFromUrl, userIdFromUrl} = useParams()
 
   useEffect(() => {
-    // Lakukan permintaan API untuk mendapatkan data pengguna di sini
-    // const useParams = new URLSearchParams(window.location.search)
-    // const tokenFromUrl = useParams.get('token');
-    // const userIdFromUrl = useParams.get('id');
 
-    console.log(userIdFromUrl)
+    //console.log(userIdFromUrl)
 
     const token = authToken || tokenFromUrl;
     const userId = authUserId || userIdFromUrl;
 
-    if(!token && !userId){
-      console.error('Token or userId is missing.');
-      return;
-    }
-
-    
+    // if(!token && !userId){
+    //   //console.error('Token or userId is missing.');
+    //   return;
+    // }
 
     const fetchUserData = async () => {
       try {
