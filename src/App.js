@@ -29,6 +29,7 @@ function App() {
               <Navbar />
               <Routes>
                 <Route path='/' element={<Beranda />} />
+                <Route path='/:id&:token' element={<Beranda />} />
                 <Route path='/our_work' element={<Our_Work />} />
                 <Route path='/contact_us' element={<Contact_Us />} />
                 <Route path='/products' element={<Products />} />
