@@ -1,18 +1,20 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useAuth } from './AuthToken'
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const {token: authToken, userId:authUserId} = useAuth()
   const [userData, setUserData] = useState(null);
+  const [tokenFromUrl, userIdFromUrl] = useParams()
 
   useEffect(() => {
     // Lakukan permintaan API untuk mendapatkan data pengguna di sini
-    const useParams = new URLSearchParams(window.location.search)
-    const tokenFromUrl = useParams.get('token');
-    const userIdFromUrl = useParams.get('id');
+    // const useParams = new URLSearchParams(window.location.search)
+    // const tokenFromUrl = useParams.get('token');
+    // const userIdFromUrl = useParams.get('id');
 
     console.log(userIdFromUrl)
 
