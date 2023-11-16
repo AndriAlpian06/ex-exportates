@@ -17,8 +17,9 @@ function formatRupiah(angka) {
 }
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const [paymentToken, setPaymentToken] = useState(null)
+  const [orderGenerateId, setOrderGenerateId] = useState('')
+  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const {userData} = useUser()
   const {token} = useAuth()
@@ -26,7 +27,13 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   const imageUrl1 = 'https://cdn.create.vista.com/api/media/small/296406986/stock-photo-top-view-shopping-cart-presents';
-  
+
+  const generateOrderNumber = () => {
+    // Logika untuk menghasilkan nomor transaksi otomatis
+    const generateOrderNumber = Math.floor(1000 + Math.random() * 9000)
+    setOrderGenerateId(generateOrderNumber)
+  }  
+
   const checkoutPayment = async () => {
     
     //console.log(userData)
@@ -46,7 +53,7 @@ export const Cart = () => {
       });
 
       const paymentData = { // Total jumlah pembayaran
-        orderId: 'ORDER-123',
+        orderId: orderGenerateId,
         totalAmount: totalAmount,
         transactions: transactions,
         customer_details: {
