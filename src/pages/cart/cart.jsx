@@ -82,7 +82,10 @@ export const Cart = () => {
           "Authorization": `Bearer ${token}`
         }
       })
+
+      console.log(response.data)
       //console.log(response.data.token.token)
+
       if(response.status === 200){
         const data = response.data
         //console.log(data.token.token)
