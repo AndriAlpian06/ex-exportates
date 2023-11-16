@@ -36,7 +36,7 @@ export const Cart = () => {
 
   const checkoutPayment = async () => {
     
-    //console.log(userData)
+    console.log(orderGenerateId)
 
     try {
 
@@ -83,7 +83,7 @@ export const Cart = () => {
         }
       })
 
-      console.log(response.data)
+      //console.log(response.data)
       //console.log(response.data.token.token)
 
       if(response.status === 200){
