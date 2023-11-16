@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const {token: authToken, userId:authUserId} = useAuth()
+  const {token, userId} = useAuth()
   const [userData, setUserData] = useState(null);
   const {tokenFromUrl, userIdFromUrl} = useParams()
 
@@ -14,8 +14,8 @@ export const UserProvider = ({ children }) => {
 
     //console.log(userIdFromUrl)
 
-    const token = authToken || tokenFromUrl;
-    const userId = authUserId || userIdFromUrl;
+    //const token = authToken || tokenFromUrl;
+    //const userId = authUserId || userIdFromUrl;
 
     // if(!token && !userId){
     //   //console.error('Token or userId is missing.');
@@ -43,7 +43,7 @@ export const UserProvider = ({ children }) => {
     };
 
     fetchUserData();
-  }, [authToken, authUserId]);
+  }, [token, userId]);
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
